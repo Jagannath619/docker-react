@@ -4,8 +4,24 @@ services:
 
 before_install:
   - docker build -t jjxx/docker-react -f Dockerfile.dev .
-
-  
-
+  - docker run -d -p 127.0.0.1:3000:3000 jjxx/docker-react
+  - docker ps -a
+script:
+  - docker run jjxx/docker-react npm run test -- --coverage
+before_deploy: "echo 'ready for deploy???????????????'"
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "Docker-React"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-1-633621172169"
+  bucket_path: "Docker-React"
+  on:
+    branch: master
+  access_key_id: 
+    secure: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"    
+after_deploy: "echo 'Deployed successfully'"
 
   
