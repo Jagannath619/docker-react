@@ -5,8 +5,7 @@ services:
 before_install:
   - docker build -t jjxx/docker-react -f Dockerfile.dev .
 
-script:
-  - travis_wait docker run jjxx/docker-react npm run test -- --coverage
+  
 
 
   
