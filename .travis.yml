@@ -12,7 +12,7 @@ script:
 before_deploy: "echo 'ready for deploy???????????????'"
 deploy:
   provider: elasticbeanstalk
-  skip_cleanup: false
+  skip_cleanup: true
   region: "us-east-1"
   app: "Docker-JJXX"
   env: "DockerJjxx-env"
