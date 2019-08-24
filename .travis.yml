@@ -13,10 +13,10 @@ before_deploy: "echo 'ready for deploy???????????????'"
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "Docker-React"
-  env: "DockerReact-env"
+  app: "Docker-JJXX"
+  env: "DockerJjxx-env"
   bucket_name: "elasticbeanstalk-us-east-1-633621172169"
-  bucket_path: "Docker-React"
+  bucket_path: "Docker-JJXX"
   on:
     branch: master
   access_key_id: 

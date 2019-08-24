@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Hello There you are on feature branch
+          Hello There you are on new branch
         </a>
       </header>
     </div>
